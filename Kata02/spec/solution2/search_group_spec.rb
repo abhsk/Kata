@@ -26,5 +26,21 @@ describe SearchGroup do
     expect(result).to eq([1,2])
   end
 
+  it 'should return false if target is not the last element in the array' do
+    sample = [7]
+
+    result = SearchGroup.new(sample).bsearch(1)
+    expect(result).to eq(false)
+  end
+
+
+  it 'should return true if target is the last element in the array' do
+    sample = [1]
+
+    result = SearchGroup.new(sample).bsearch(1)
+    expect(result).to eq(true)
+  end
+
+
 
 end
